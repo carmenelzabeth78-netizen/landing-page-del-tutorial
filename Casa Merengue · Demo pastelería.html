@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa Merengue · Postres artesanales</title>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF4F1;--surface:#fff;--ink:#2E1B22;--muted:#6E5A60;--berry:#B8244F;--berry-ink:#fff;--pist:#C9DDA0;--line:#EBD9D6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1F1217;--surface:#2B1A21;--ink:#F8E9E6;--muted:#C6AEB3;--berry:#F06A8F;--berry-ink:#2B0E17;--pist:#7E9A4E;--line:#4A2F38}}
+:root[data-theme="dark"]{--bg:#1F1217;--surface:#2B1A21;--ink:#F8E9E6;--muted:#C6AEB3;--berry:#F06A8F;--berry-ink:#2B0E17;--pist:#7E9A4E;--line:#4A2F38}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 36px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:"Young Serif",serif;font-size:1.3rem;text-decoration:none}
+.btn{display:inline-block;background:var(--berry);color:var(--berry-ink);padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:40px 0 72px}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.02em}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:44ch;margin:20px 0 28px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.cake{width:100%;max-width:380px;justify-self:center}
+.cake .drip{animation:sway 5s ease-in-out infinite;transform-origin:50% 0}
+@keyframes sway{50%{transform:translateY(4px)}}
+@media (prefers-reduced-motion:reduce){.cake .drip{animation:none}}
+/* beneficios */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.benefits div{padding:24px 24px 24px 0}
+.benefits div+div{padding-left:24px;border-left:1px solid var(--line)}
+.benefits h3{font-size:1.35rem;margin-bottom:8px}
+.benefits p{margin:0;color:var(--muted)}
+/* menú */
+.menu{background:var(--pist);color:#23301A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .menu{color:#F4FBE6}}
+:root[data-theme="dark"] .menu{color:#F4FBE6}
+.menu .lead{color:inherit;opacity:.85}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 48px}
+.items li{display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px dashed currentColor}
+.items b{font-family:"Young Serif",serif;font-weight:400;font-size:1.2rem}
+.items small{display:block;opacity:.8;font-size:.9rem}
+.items .dots{flex:1}
+.items .price{font-weight:700;white-space:nowrap}
+.note{margin-top:20px;font-size:.95rem;opacity:.85}
+/* faq */
+.faq{max-width:720px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--berry);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--muted)}
+/* cta + form */
+.order{background:var(--ink);color:var(--bg);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px}
+.order h2{color:inherit}
+.order p{opacity:.85}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);width:100%}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ok{display:none;background:var(--pist);color:#23301A;padding:16px;border-radius:12px;font-weight:500}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.95rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){
+ .hero,.order,.items,.benefits{grid-template-columns:1fr}
+ .benefits div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+ .order{padding:28px 20px}
+ section{padding:52px 0}
+ .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header class="top">
+  <a class="logo" href="#">Casa Merengue</a>
+  <a class="btn ghost" href="#pedido">Hacer pedido</a>
+ </header>
+
+ <div class="hero">
+  <div>
+   <h1>Postres que se terminan antes de llegar a la mesa</h1>
+   <p>Tortas, cheesecakes y porciones individuales hechas cada mañana con mantequilla, frutas frescas y cero premezclas.</p>
+   <div class="actions">
+    <a class="btn" href="#pedido">Pedir mi postre</a>
+    <a class="btn ghost" href="#carta">Ver la carta</a>
+   </div>
+  </div>
+  <svg class="cake" viewBox="0 0 320 320" role="img" aria-label="Ilustración de una torta con cobertura de frambuesa">
+   <ellipse cx="160" cy="288" rx="130" ry="16" fill="var(--line)"/>
+   <rect x="50" y="170" width="220" height="110" rx="14" fill="#F4D9A8"/>
+   <rect x="50" y="215" width="220" height="14" fill="#C9DDA0"/>
+   <rect x="50" y="170" width="220" height="14" fill="#fff" opacity=".5"/>
+   <path class="drip" d="M44 170c0-40 28-62 116-62s116 22 116 62c-14 0-14 26-30 26s-14-18-30-18-14 34-30 34-14-30-30-30-14 22-30 22-14-24-30-24-14 20-30 20-14-26-30-26-14 12-22 12z" fill="var(--berry)"/>
+   <circle cx="160" cy="92" r="18" fill="var(--berry)"/>
+   <circle cx="152" cy="84" r="5" fill="#fff" opacity=".6"/>
+   <path d="M160 74c0-12 6-20 16-24" stroke="#5E7A35" stroke-width="5" fill="none" stroke-linecap="round"/>
+   <circle cx="105" cy="120" r="8" fill="#fff"/><circle cx="215" cy="124" r="8" fill="#fff"/>
+  </svg>
+ </div>
+
+ <section style="padding-top:24px">
+  <h2>Por qué volvemos a pedir</h2>
+  <p class="lead">Un postre de panadería se nota en el primer bocado. Esto es lo que hacemos distinto.</p>
+  <div class="benefits">
+   <div><h3>Horneado el mismo día</h3><p>Nada congelado ni de ayer. Lo que ves en la vitrina salió del horno esa mañana.</p></div>
+   <div><h3>Menos azúcar, más sabor</h3><p>Recetas balanceadas con fruta real y chocolate de verdad, para que no empalague.</p></div>
+   <div><h3>A tu medida</h3><p>Desde una porción hasta una torta para 30 personas, con mensaje y decoración a elección.</p></div>
+  </div>
+ </section>
+</div>
+
+<section class="menu" id="carta">
+ <div class="wrap">
+  <h2>La carta</h2>
+  <p class="lead">Precios de ejemplo. Todos los postres incluyen empaque para llevar.</p>
+  <ul class="items">
+   <li><div><b>Cheesecake de maracuyá</b><small>Base de galleta, porción 150 g</small></div><span class="dots"></span><span class="price">$4,50</span></li>
+   <li><div><b>Torta tres leches</b><small>Porción generosa con crema batida</small></div><span class="dots"></span><span class="price">$3,75</span></li>
+   <li><div><b>Brownie con helado</b><small>Chocolate 60 % y nueces</small></div><span class="dots"></span><span class="price">$4,00</span></li>
+   <li><div><b>Tarta de frutillas</b><small>Crema pastelera de vainilla</small></div><span class="dots"></span><span class="price">$4,25</span></li>
+   <li><div><b>Caja de 6 alfajores</b><small>Rellenos de manjar casero</small></div><span class="dots"></span><span class="price">$7,00</span></li>
+   <li><div><b>Torta entera (8 porciones)</b><small>Elige sabor y decoración</small></div><span class="dots"></span><span class="price">desde $26</span></li>
+  </ul>
+  <p class="note">Pedidos de tortas enteras con 48 horas de anticipación.</p>
+ </div>
+</section>
+
+<div class="wrap">
+ <section>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq" style="margin-top:24px">
+   <details><summary>¿Con cuánta anticipación debo pedir una torta?</summary><p>Con 48 horas para tortas enteras. Las porciones y cajas pequeñas se pueden pedir el mismo día hasta las 3 p. m.</p></details>
+   <details><summary>¿Hacen envíos a domicilio?</summary><p>Sí, en la ciudad y zonas cercanas. El costo depende de la distancia y se confirma al aceptar el pedido.</p></details>
+   <details><summary>¿Tienen opciones sin gluten o sin lactosa?</summary><p>Tenemos algunas opciones. Cuéntanos tu necesidad en el formulario y te diremos qué podemos preparar con seguridad.</p></details>
+   <details><summary>¿Cómo se paga?</summary><p>Efectivo, transferencia o tarjeta. Para tortas enteras pedimos un abono del 50 % para reservar la fecha.</p></details>
+   <details><summary>¿Cuánto dura un postre en la nevera?</summary><p>Entre 3 y 4 días bien tapado. Los de crema es mejor comerlos en las primeras 48 horas.</p></details>
+  </div>
+ </section>
+
+ <section id="pedido" style="padding-top:0">
+  <div class="order">
+   <div>
+    <h2>Cuéntanos qué se te antoja</h2>
+    <p>Déjanos tus datos y te escribimos para confirmar sabor, precio y hora de entrega. Respondemos en menos de una hora en horario de atención.</p>
+    <p>Lunes a sábado, 9:00 a 19:00</p>
+   </div>
+   <form id="f" novalidate>
+    <label>Nombre<input name="n" required autocomplete="name"></label>
+    <div class="row">
+     <label>WhatsApp<input name="t" type="tel" required autocomplete="tel"></label>
+     <label>Fecha de entrega<input name="d" type="date" required></label>
+    </div>
+    <label>Postre
+     <select name="p">
+      <option>Cheesecake de maracuyá</option><option>Torta tres leches</option><option>Brownie con helado</option>
+      <option>Tarta de frutillas</option><option>Caja de 6 alfajores</option><option>Torta entera (8 porciones)</option>
+     </select>
+    </label>
+    <label>Detalles (mensaje, alergias, cantidad)<textarea name="m" rows="3"></textarea></label>
+    <button class="btn" type="submit">Enviar pedido</button>
+    <div class="ok" id="ok" role="status">¡Pedido enviado! Te escribimos por WhatsApp para confirmar.</div>
+   </form>
+  </div>
+ </section>
+
+ <footer><span>Casa Merengue · Av. Principal 123</span><span>Página de demostración</span></footer>
+</div>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var f=e.target,bad=false;
+ ['n','t','d'].forEach(function(k){var el=f.elements[k];if(!el.value.trim()){el.style.borderColor='var(--berry)';bad=true}else{el.style.borderColor=''}});
+ if(bad){f.elements.n.value.trim()?null:f.elements.n.focus();return}
+ document.getElementById('ok').style.display='block';
+ f.reset();
+});
+</script>
+</body>
+</html>
